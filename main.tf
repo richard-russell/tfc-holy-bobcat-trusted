@@ -21,6 +21,7 @@ data "aws_ami" "ubuntu" {
     owners = ["099720109477"] # Canonical
 }
 
+/*
 # Non-compliant config - Resource created from root module
 resource "aws_instance" "bad_ubuntu" {
   ami               = data.aws_ami.ubuntu.id
@@ -30,6 +31,7 @@ resource "aws_instance" "bad_ubuntu" {
     Name = "non-compliant"
   }
 }
+*/
 
 module "tfc-demo-two-tier" {
   source  = "app.terraform.io/richard-russell-org/tfc-demo-two-tier/aws"
